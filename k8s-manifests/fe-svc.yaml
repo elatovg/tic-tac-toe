@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-svc
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
+spec:
+  selector:
+    app: fe
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
+#  type: ClusterIP
+
